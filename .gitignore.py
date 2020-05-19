@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 
 #
+migrations/
+twitoff_development_14.db

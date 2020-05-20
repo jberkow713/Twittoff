@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, jsonify
-from models import db, User, Tweet, parse_records
-from basilica_service import basilica_api_client
-from twitter_service import api
+from web_app.routes.models import db, User, Tweet, parse_records
+from web_app.routes.twitter_service import twitter_api_client
+from web_app.routes.basilica_service import basilica_api_client
 
 twitter_routes = Blueprint("twitter_routes", __name__)
 
@@ -51,5 +51,4 @@ def get_user(screen_name=None):
         counter+=1
     db.session.commit()
     #breakpoint()
-    return "OK"
-    #return render_template("user.html", user=db_user, tweets=statuses) # tweets=db_tweets
+    return render_template("user.html", user=db_user, tweets=statuses) # tweets=db_tweets

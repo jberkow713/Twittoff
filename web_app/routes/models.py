@@ -49,3 +49,6 @@ def parse_records(database_records):
         del parsed_record["_sa_instance_state"]
         parsed_records.append(parsed_record)
     return parsed_records
+
+#if __name__ == "__main__":
+#    print("hello")    
